@@ -17,7 +17,7 @@ public class JobTest {
     @Before
     public void createJobObject() {
         test_job1 = new Job("Dog Petter", new Employer ("Rancho Conejo"), new Location ("West Fork"), new PositionType("Permanent"), new CoreCompetency("Love"));
-        test_job2 = new Job("Dog Sitter", new Employer ("Rancho Conejo"), new Location ("West Fork"), new PositionType("Permanent"), new CoreCompetency("Love"));
+        test_job2 = new Job("Dog Petter", new Employer ("Rancho Conejo"), new Location ("West Fork"), new PositionType("Permanent"), new CoreCompetency("Love"));
     }
 
     @Test
@@ -34,6 +34,15 @@ public class JobTest {
         assertEquals("Persistence", test_job3.getCoreCompetency().getValue());
         assertNotNull(test_job3);
         assertNotNull(test_job3.getEmployer());
+        assertNotNull(test_job3.getName());
+        assertNotNull(test_job3.getLocation());
+        assertNotNull(test_job3.getCoreCompetency());
+        assertNotNull(test_job3.getPositionType());
+    }
+
+    @Test
+    public void testJobsForEquality() {
+        assertFalse(test_job1.equals(test_job2));
     }
 }
 
