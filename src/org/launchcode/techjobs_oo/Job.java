@@ -12,13 +12,11 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
+    private static final String DEFAULT_MESSAGE = "Data Not Available";
 
-    // Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
     public Job() {
-    id = nextId;
-    nextId++;
+        id = nextId;
+        nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
@@ -29,8 +27,52 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
 
-}
-    // Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+
+
+    }
+
+    @Override
+    public String toString() {
+        String retval = "\n";
+        retval += "ID: " + this.id;
+
+        if (this.name.equals("")) {
+            retval += "Name: " + DEFAULT_MESSAGE;
+        } else {
+            retval += "Name: " + this.name;
+        }
+
+        if (this.employer.toString().equals("")) {
+            retval += "Employer: " + DEFAULT_MESSAGE;
+        } else {
+            retval += "Employer: " + this.employer + "\n";
+        }
+
+        if (this.location.toString().equals("")) {
+            retval += "Location: " + DEFAULT_MESSAGE;
+        } else {
+            retval += "Location: " + this.location + "\n";
+        }
+
+        if (this.positionType.toString().equals("")) {
+            retval += "Position Type: " + DEFAULT_MESSAGE;
+        } else {
+            retval += "Position Type: " + this.positionType + "\n";
+        }
+
+        if (this.coreCompetency.toString().equals("")) {
+            retval += "Core Competency: " + DEFAULT_MESSAGE;
+        } else {
+            retval += "Core Competency: " + this.coreCompetency + "\n";
+        }
+
+        if (this.name.equals("") && this.employer.toString().equals("") && this.location.toString().equals("") && this.positionType.toString().equals("") && this.coreCompetency.toString().equals("")) {
+            retval = "OOPS! This job does not seem to exist.";
+        }
+        return retval;
+    }
+
+// Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
     @Override
@@ -45,11 +87,6 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-
-    // Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
-
 
     public String getName() {
         return name;
@@ -94,4 +131,6 @@ public class Job {
     public int getId() {
         return id;
     }
+
+
 }

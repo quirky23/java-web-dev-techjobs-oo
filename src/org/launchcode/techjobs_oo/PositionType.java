@@ -21,9 +21,7 @@ public class PositionType {
 
     @Override
     public String toString() {
-        return "PositionType{" +
-                value + '\'' +
-                '}';
+        return value;
     }
 
     // Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
