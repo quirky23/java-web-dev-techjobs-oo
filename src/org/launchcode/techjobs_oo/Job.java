@@ -26,42 +26,39 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-
-
-
     }
 
     @Override
     public String toString() {
         String retval = "\n";
-        retval += "ID: " + this.id;
+        retval += "ID: " + this.id + "\n";
 
         if (this.name.equals("")) {
-            retval += "Name: " + DEFAULT_MESSAGE;
+            retval += "Name: " + DEFAULT_MESSAGE + "\n";
         } else {
-            retval += "Name: " + this.name;
+            retval += "Name: " + this.name + "\n";
         }
 
         if (this.employer.toString().equals("")) {
-            retval += "Employer: " + DEFAULT_MESSAGE;
+            retval += "Employer: " + DEFAULT_MESSAGE + "\n";
         } else {
             retval += "Employer: " + this.employer + "\n";
         }
 
         if (this.location.toString().equals("")) {
-            retval += "Location: " + DEFAULT_MESSAGE;
+            retval += "Location: " + DEFAULT_MESSAGE + "\n";
         } else {
             retval += "Location: " + this.location + "\n";
         }
 
         if (this.positionType.toString().equals("")) {
-            retval += "Position Type: " + DEFAULT_MESSAGE;
+            retval += "Position Type: " + DEFAULT_MESSAGE + "\n";
         } else {
             retval += "Position Type: " + this.positionType + "\n";
         }
 
         if (this.coreCompetency.toString().equals("")) {
-            retval += "Core Competency: " + DEFAULT_MESSAGE;
+            retval += "Core Competency: " + DEFAULT_MESSAGE + "\n";
         } else {
             retval += "Core Competency: " + this.coreCompetency + "\n";
         }
